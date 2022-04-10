@@ -9,6 +9,7 @@ shape classes.
 
 from shapes.rectangle import Rectangle
 from shapes.circle import Circle
+from shapes.triangular import Triangular
 
 
 def test_rectangle():
@@ -45,3 +46,16 @@ def test_circle():
     assert radius8.perimeter() == 50.27
     assert radius5.diameter() == 10
     assert radius8.diameter() == 16
+
+def test_triangular():
+    """
+    Defines tests on some specific triangular objects.
+    """
+    triangular1 = Triangular(5,8,60)
+    triangular2 = Triangular(9,6,35)
+
+    # Test areas, perimeters
+    assert triangular1.area() == 78.54
+    assert triangular2.area() == 201.06
+    assert triangular1.perimeter() == 31.42
+    assert triangular2.perimeter() == 50.27

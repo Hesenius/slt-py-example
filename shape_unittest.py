@@ -8,8 +8,11 @@ circle and rectangle classes.
 """
 
 import unittest
+
+from shapes.circle import Circle
 from unittests.rectangle_test import RectangleTest
 from unittests.circle_test import CircleTest
+from unittests.triangular_test import TriangularTest
 
 
 def main():
@@ -24,7 +27,40 @@ def main():
     test_suites = [
         test_loader.loadTestsFromTestCase(CircleTest),
         test_loader.loadTestsFromTestCase(RectangleTest),
+        test_loader.loadTestsFromTestCase(TriangularTest)
     ]
+
+    def test_circle():
+        """
+        Defines tests on some specific circle objects.
+        """
+        radius5 = Circle(5)
+        radius8 = Circle(8)
+
+        # Test areas, perimeters, and diameters
+        assert radius5.area() == 78.54
+        assert radius8.area() == 201.06
+        assert radius5.perimeter() == 31.42
+        assert radius8.perimeter() == 50.27
+        assert radius5.diameter() == 10
+        assert radius8.diameter() == 16
+
+    def test_circle():
+        """
+        Defines tests on some specific circle objects.
+        """
+        radius5 = Circle(5)
+        radius8 = Circle(8)
+
+        # Test areas, perimeters, and diameters
+        assert radius5.area() == 78.54
+        assert radius8.area() == 201.06
+        assert radius5.perimeter() == 31.42
+        assert radius8.perimeter() == 50.27
+        assert radius5.diameter() == 10
+        assert radius8.diameter() == 16
+
+
 
     # The runner is responsible for executing tests and printing output
     test_runner = unittest.TextTestRunner(verbosity=2)
